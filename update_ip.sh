@@ -26,6 +26,5 @@ while IFS= read -r line; do
 done < "$file_name"
 
 for ip in "${ip_addresses[@]}"; do
-	#echo "$ip, $project_id, $file_name_without_extension"
 	atlas accessList create "$ip" --type ipAddress --projectId "$project_id" --comment "$file_name_without_extension" --output json
 done
